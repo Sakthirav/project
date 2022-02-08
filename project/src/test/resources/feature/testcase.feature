@@ -12,5 +12,5 @@ Then Select a package
 Then Navigate to the Availability of package
 Then Select date and member
 Then Enter the "<username>" and "<password>"
-Then Enter Billing info "<firstname>" , "<Lasetname>" , "<Email>" , "<Address>" , "<city>" and "<Country>" and Book the Trip
+Then Enter Billing info "<firstname>" , "<Lasetname>" , "<Email>" , "<Address>" , "<city>" and "<Country>"
 And Screenshot of trip booking bill

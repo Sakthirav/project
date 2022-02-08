@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 public class checkavilablitypage {
 	WebDriver driver;
-
 	@FindBy(xpath="//*[@id=\"open-booking-modal\"]")
 	WebElement Checkavailability;
 	public checkavilablitypage(WebDriver driver)

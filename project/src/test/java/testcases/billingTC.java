@@ -2,16 +2,18 @@ package testcases;
 
 import java.io.IOException;
 
+import org.openqa.selenium.Keys;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import baseclass.libraryclass;
+import pages.billingpage;
 import seleniumresuableFunction.seleniumutility;
 
-public class billingdetailTc extends libraryclass{
+public class billingTC extends libraryclass {
 	seleniumutility selenium;
-	pages.billingdetailpage Bp;
+	billingpage Bp;
 	@BeforeTest
 	public void openapp()
 	{
@@ -20,7 +22,7 @@ public class billingdetailTc extends libraryclass{
 	@Test
 	public void billingdetailpage()
 	{
-		 Bp=new pages.billingdetailpage(driver);
+		 Bp=new billingpage(driver);
 		 Bp.login("sakthi","R","123@abc.com","abcd","coimbatore","india");
 		Bp.click();
 	}
@@ -30,7 +32,7 @@ public class billingdetailTc extends libraryclass{
 	public void teardown() throws IOException
 	{
 	 selenium=new seleniumutility(driver);
-	 selenium.screenshot("C:\\Users\\sakthir\\git\\project\\project\\src\\test\\resources\\screenshot\\BillDetail.png");
+	 selenium.screenshot("C:\\Users\\sakthir\\git\\project\\project\\src\\test\\resources\\Screenshot\\BillDetail.png");
 	}
 	public void close() {
 		tearDown();

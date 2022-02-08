@@ -1,10 +1,18 @@
 package stepdefinition;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import baseclass.libraryclass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.GetStartedpage;
+import pages.billingpage;
 import pages.checkavilablitypage;
 import pages.contactinfopage;
 import pages.contactpage;
@@ -29,7 +37,7 @@ public class loginstep extends libraryclass {
 	checkavilablitypage cp;
 	datapackagepage dp;
 	loginpage lp;
-	pages.billingdetailpage Bp;
+	billingpage Bp;
 	@Given("To launch the application and navigate to url")
 	public void to_launch_the_application_and_navigate_to_url() {
 	
@@ -82,8 +90,12 @@ public class loginstep extends libraryclass {
     }
     @Then("Navigate to the Availability of package")
     public void navigate_to_the_Availability_of_package() {
-    	 cp=new checkavilablitypage(driver);
- 		cp.click();
+    	WebDriverWait w = new WebDriverWait(driver,40);
+		w.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"open-booking-modal\"]")));
+		driver.findElement(By.xpath("//*[@id=\"open-booking-modal\"]")).click();
+    	//cp=new checkavilablitypage(driver);
+    	//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+ 		//cp.click();
  		logger.info("*******Trip  Availability*********");
     }
     @Then("Select date and member")
@@ -99,11 +111,18 @@ public class loginstep extends libraryclass {
  		lp.submit();
  		logger.info("*******Login into Travel Application*********");
     }
-    @Then("Enter Billing info {string} , {string} , {string} , {string} , {string} and {string} and Book the Trip")
+   /* @Then("Enter Billing info {string} , {string} , {string} , {string} , {string} and {string} and Book the Trip")
     public void enter_Billing_info_and_and_Book_the_Trip(String Firstname, String Lastname, String Email, String Address, String City, String country) {
-    	 Bp=new pages.billingdetailpage(driver);
+    	 Bp=new billingpage(driver);
 		 Bp.login("sakthi","R","123@abc.com","abcd","coimbatore","india");
 		Bp.click();   	
+    }*/
+    @Then("Enter Billing info {string} , {string} , {string} , {string} , {string} and {string}")
+    public void enter_Billing_info_and(String fname, String lname, String email, String address, String city, String country) {
+    	 Bp=new billingpage(driver);
+    	 Bp.login("sakthi","R","123@abc.com","abcd","coimbatore","india");
+    	 Bp.click();
+    	
     }
     @Then("Screenshot of trip booking bill")
     public void screenshot_of_trip_booking_bill() throws IOException {
