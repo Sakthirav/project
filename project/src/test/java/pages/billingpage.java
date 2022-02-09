@@ -6,17 +6,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class billingpage {
 	WebDriver driver;
-    @FindBy(id="wp_travel_engine_booking_setting[place_order][booking][fname]")
+    @FindBy(xpath="//*[@id=\"wp_travel_engine_booking_setting[place_order][booking][fname]\"]")
 	WebElement Firstname;
-	@FindBy(id="wp_travel_engine_booking_setting[place_order][booking][lname]")
+	@FindBy(xpath="//*[@id=\"wp_travel_engine_booking_setting[place_order][booking][lname]\"]")
 	WebElement Lastname;
-	@FindBy(id="wp_travel_engine_booking_setting[place_order][booking][email]")
+	@FindBy(xpath="//*[@id=\"wp_travel_engine_booking_setting[place_order][booking][email]\"]")
 	WebElement Email;
-	@FindBy(id="wp_travel_engine_booking_setting[place_order][booking][address]")
+	@FindBy(xpath="//*[@id=\"wp_travel_engine_booking_setting[place_order][booking][address]\"]")
 	WebElement Address;
-	@FindBy(id="wp_travel_engine_booking_setting[place_order][booking][city]")
+	@FindBy(xpath="//*[@id=\"wp_travel_engine_booking_setting[place_order][booking][city]\"]")
 	WebElement City;
-	@FindBy(id="wp_travel_engine_booking_setting[place_order][booking][country]")
+	@FindBy(xpath="//*[@id=\"wp_travel_engine_booking_setting[place_order][booking][country]\"]")
 	WebElement  Country;
 	@FindBy(xpath="//*[@id=\"wp-travel-engine-new-checkout-form\"]/div[7]/div[1]/label")
 	WebElement paymentmethod;

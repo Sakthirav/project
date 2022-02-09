@@ -1,12 +1,8 @@
 package stepdefinition;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import baseclass.libraryclass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,7 +22,6 @@ import seleniumresuableFunction.seleniumutility;
 
 
 public class loginstep extends libraryclass {
-	seleniumutility selenium;
 	GetStartedpage Gp;
 	triptypepage TT;
 	destinationpage Dp;
@@ -37,7 +32,9 @@ public class loginstep extends libraryclass {
 	checkavilablitypage cp;
 	datapackagepage dp;
 	loginpage lp;
+	seleniumutility selenium;
 	billingpage Bp;
+	
 	@Given("To launch the application and navigate to url")
 	public void to_launch_the_application_and_navigate_to_url() {
 	
@@ -111,26 +108,23 @@ public class loginstep extends libraryclass {
  		lp.submit();
  		logger.info("*******Login into Travel Application*********");
     }
-   /* @Then("Enter Billing info {string} , {string} , {string} , {string} , {string} and {string} and Book the Trip")
-    public void enter_Billing_info_and_and_Book_the_Trip(String Firstname, String Lastname, String Email, String Address, String City, String country) {
-    	 Bp=new billingpage(driver);
-		 Bp.login("sakthi","R","123@abc.com","abcd","coimbatore","india");
-		Bp.click();   	
-    }*/
+   
     @Then("Enter Billing info {string} , {string} , {string} , {string} , {string} and {string}")
     public void enter_Billing_info_and(String fname, String lname, String email, String address, String city, String country) {
     	 Bp=new billingpage(driver);
     	 Bp.login("sakthi","R","123@abc.com","abcd","coimbatore","india");
     	 Bp.click();
-    	
+    	 logger.info("*******Billing Detail*********");
+
     }
-    @Then("Screenshot of trip booking bill")
-    public void screenshot_of_trip_booking_bill() throws IOException {
+    @Then("Screenshot of trip booking bill and close Application")
+    public void screenshot_of_trip_booking_bill_and_close_Application() throws IOException {
     	selenium=new seleniumutility(driver);
-		selenium.screenshot("C:\\Users\\sakthir\\git\\project\\project\\src\\test\\resources\\screenshot\\BillDetail.png");
+    	selenium.screenshot("C:\\Users\\sakthir\\git\\project\\project\\src\\test\\resources\\screenshot\\BillDetail.png");
 		logger.info("*******Taking Screenshot*********");
-		 tearDown();
+		tearDown();
     }
+    
 }
 
 	

@@ -1,8 +1,6 @@
 package testcases;
 
 import java.io.IOException;
-
-import org.openqa.selenium.Keys;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -31,10 +29,8 @@ public class billingTC extends libraryclass {
 	@AfterTest
 	public void teardown() throws IOException
 	{
-	 selenium=new seleniumutility(driver);
-	 selenium.screenshot("C:\\Users\\sakthir\\git\\project\\project\\src\\test\\resources\\Screenshot\\BillDetail.png");
-	}
-	public void close() {
-		tearDown();
-	}
+		 selenium=new seleniumutility(driver);
+			selenium.screenshot("C:\\Users\\sakthir\\git\\project\\project\\src\\test\\resources\\Screenshot\\Billpage.png");
+	 tearDown();
+	}	
 }

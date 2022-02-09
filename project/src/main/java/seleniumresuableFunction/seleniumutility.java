@@ -29,8 +29,8 @@ public class seleniumutility extends libraryclass {
 	}
 	public void dropdown(String value,String locator)
 	{
-		Select sel=new Select(driver.findElement(By.id(locator)));
-		sel.selectByValue(value);
+		Select s=new Select(driver.findElement(By.id(locator)));
+		s.selectByValue(value);
 		
 	}
 }

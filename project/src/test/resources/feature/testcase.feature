@@ -13,4 +13,4 @@ Then Navigate to the Availability of package
 Then Select date and member
 Then Enter the "<username>" and "<password>"
 Then Enter Billing info "<firstname>" , "<Lasetname>" , "<Email>" , "<Address>" , "<city>" and "<Country>"
-And Screenshot of trip booking bill
+Then Screenshot of trip booking bill and close Applicationi
